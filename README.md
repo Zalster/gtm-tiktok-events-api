@@ -95,8 +95,8 @@ The request Parameters supported are
 `x-ttq-pt-query` - Search Query
 
 ## Links
-[Tiktok Events API]([TikTok Marketing API](https://ads.tiktok.com/marketing_api/docs?id=1701890979375106))
+[TikTok Marketing API](https://ads.tiktok.com/marketing_api/docs?id=1701890979375106)
 
-[Google Tag Manager Server Side]([Server-side tagging  |  Google Tag Manager - Server-side  |  Google Developers](https://developers.google.com/tag-platform/tag-manager/server-side))
+[Google Tag Manager Server Side](https://developers.google.com/tag-platform/tag-manager/server-side)
 
-[GA4 Send Data]([Send data to server-side Google Tag Manager  |  Google Tag Manager - Server-side  |  Google Developers](https://developers.google.com/tag-platform/tag-manager/server-side/send-data))
+[GA4 Send Data](https://developers.google.com/tag-platform/tag-manager/server-side/send-data)
