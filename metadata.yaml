@@ -1,5 +1,5 @@
 homepage: "https://zalster.com"
 documentation: "hhttps://github.com/Zalster/gtm-tiktok-events-api"
 versions:
-  - sha: 2b5a2f1b52201bc7d05d6a97e97e54491a4801b6
+  - sha: e2caf35de5466f14ca31dd80f7ac9dc58e8e7b18
     changeNotes: Release of Tag Template
