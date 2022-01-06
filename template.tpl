@@ -98,6 +98,7 @@ const ga4Events = {
   "click": "ClickButton",
   "search": "Search",
   "add_to_wishlist": "AddToWishlist",
+  "add_to_cart": "AddToCart",
   "begin_checkout": "InitiateCheckout",
   "add_payment_info": "AddPaymentInfo",
   "purchase": data.purchaseEvent,
