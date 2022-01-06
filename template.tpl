@@ -1,4 +1,12 @@
-﻿___INFO___
+﻿___TERMS_OF_SERVICE___
+
+By creating or modifying this file you agree to Google Tag Manager's Community
+Template Gallery Developer Terms of Service available at
+https://developers.google.com/tag-manager/gallery-tos (or such other URL as
+Google may provide), as modified from time to time.
+
+
+___INFO___
 
 {
   "type": "TAG",
@@ -97,8 +105,8 @@ const ga4Events = {
   "view_item": "ViewContent",
   "click": "ClickButton",
   "search": "Search",
-  "add_to_wishlist": "AddToWishlist",
   "add_to_cart": "AddToCart",
+  "add_to_wishlist": "AddToWishlist",
   "begin_checkout": "InitiateCheckout",
   "add_payment_info": "AddPaymentInfo",
   "purchase": data.purchaseEvent,
