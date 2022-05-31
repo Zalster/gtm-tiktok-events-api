@@ -1,5 +1,7 @@
 homepage: "https://zalster.com"
 documentation: "hhttps://github.com/Zalster/gtm-tiktok-events-api"
 versions:
+  - sha: 60e4d86921865b616b66bf1e8c1758901a531177
+    changeNotes: Fix for TikTok Contents from GA4 Items
   - sha: e2caf35de5466f14ca31dd80f7ac9dc58e8e7b18
     changeNotes: Release of Tag Template
