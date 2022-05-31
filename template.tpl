@@ -148,10 +148,11 @@ const getTtclidFromUrl = (pageUrl) => {
 const getTtqContentsFromItems = (items) => {
   if (items.length === 0) return;
   return items.map((item) => {
+    let item_id = item.item_id || item.id;
     let content = {
-      "content_id": makeString(items.id),
-      "quantity": makeInteger(items.quantity),
-      "price": makeNumber(items.price)
+      "content_id": makeString(item_id),
+      "quantity": makeInteger(item.quantity),
+      "price": makeNumber(item.price)
     };
     if (item.hasOwnProperty("item_category")) {
       content.content_type = item.item_category;
