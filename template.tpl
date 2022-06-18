@@ -185,7 +185,7 @@ const eventData = getAllEventData();
 
 // context
 let context = {};
-context.ip = eventData['x-ttq-ct-ip-adress'] || eventData.ip_adress || getRemoteAddress();
+context.ip = eventData['x-ttq-ct-ip-address'] || eventData.ip_override || getRemoteAddress();
 context.user_agent = eventData['x-ttq-ct-user-agent'] || eventData.user_agent;
 
 // context > page
@@ -232,7 +232,7 @@ let postData = {};
 postData.pixel_code = data.pixelCode;
 postData.event = getEventName(eventData['x-ttq-event-name'] || eventData.event_name);
 postData.timestamp = eventData['x-ttq-timestamp'] || eventData.timestamp || makeString(makeInteger(getTimestampMillis() / 1000));
-postData.event_id = eventData['x-ttq-event-id'] || eventData.transactionId || eventData.event_id || generateGA4EventId(eventData);
+postData.event_id = eventData['x-ttq-event-id'] || eventData.transaction_id || eventData.event_id || generateGA4EventId(eventData);
 postData.context = context;
 postData.properties = properties;
 
