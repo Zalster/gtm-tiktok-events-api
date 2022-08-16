@@ -237,8 +237,8 @@ postData.context = context;
 postData.properties = properties;
 
 // TikTok API Settings
-const apiVersion = '1.2';
-const postUrl = 'https://business-api.tiktok.com/open_api/v'+apiVersion+'/pixel/track/';
+const apiVersion = 'v1.3';
+const postUrl = 'https://business-api.tiktok.com/open_api/'+apiVersion+'/pixel/track/';
 
 // Send Event to TikTok
 sendHttpRequest(postUrl, (statusCode, headers, response) => {
