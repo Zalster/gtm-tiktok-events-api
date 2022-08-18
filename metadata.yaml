@@ -1,7 +1,7 @@
 homepage: "https://zalster.com"
 documentation: "hhttps://github.com/Zalster/gtm-tiktok-events-api"
 versions:
-  -sha :cdde9b1dfb31d83362210bce65e2c5472aa3eb6c
+  - sha: cdde9b1dfb31d83362210bce65e2c5472aa3eb6c
     changeNotes: Updated to latest TikTok API Version
   - sha: 2ea23df363d9f52f891be6409bfb621ed03382f7
     changeNotes: Fix for IP Address and Transaction ID for GA4 Client Requests
