@@ -1,6 +1,8 @@
 homepage: "https://zalster.com"
 documentation: "hhttps://github.com/Zalster/gtm-tiktok-events-api"
 versions:
+  - sha: 7e35b7de7045c9a1dac45ef26e722b2cb36eeee7
+    changeNotes: Updated price logic in items
   - sha: f2ad4ca14fbbd454db7e423cfd69a2d973ba0c8a
     changeNotes: Minor updates
   - sha: cdde9b1dfb31d83362210bce65e2c5472aa3eb6c
