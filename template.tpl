@@ -156,8 +156,11 @@ const getTtqContentsFromItems = (items) => {
     if (item.hasOwnProperty("price")) {
       content.price = makeNumber(item.price);
     }
+    if (item.hasOwnProperty("item_name")) {
+      content.content_name = item.item_name;
+    }
     if (item.hasOwnProperty("item_category")) {
-      content.content_type = item.item_category;
+      content.content_category = item.item_category;
     }
     if (item.hasOwnProperty("content_type")) {
       content.content_type = item.content_type;
