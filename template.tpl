@@ -202,6 +202,24 @@ const generateGA4EventId = (eventData) => {
   ].join('_');
 };
 
+const mergeObj = (obj, obj2) => {
+  for (let key in obj2) {
+    if (obj2.hasOwnProperty(key)) {
+      obj[key] = obj2[key];
+    }
+  }
+  return obj;
+};
+
+const parsePhoneNumber = (phone) => {
+  if (getType(phone) === 'string') {
+    if (phone.length > 0) {
+       return phone[0] !== '+' ? '+'+phone : phone;
+    }
+  }
+  return undefined;
+};
+
 // Event Data
 const eventData = getAllEventData();
 
@@ -231,10 +249,12 @@ if (ttclid) {
 }
 
 // context > user
-const ga4UserProperties = eventData['x-ga-mp2-user_properties'] || eventData.user_properties || {};
-const external_id = eventData['x-ttq-ud-external-id'] || eventData.user_id || ga4UserProperties.id;
-const email = eventData['x-ttq-ud-email'] || ga4UserProperties.email;
-const phone_number = eventData['x-ttq-ud-phone-number'] || ga4UserProperties.phone_number;
+const mp2UserProperties = eventData['x-ga-mp2-user_properties'] || {};
+const userProperties = mergeObj(mp2UserProperties, eventData.userProperties || {});
+const ga4UserData = mergeObj(userProperties, eventData.user_data || {});
+const external_id = eventData['x-ttq-ud-external-id'] || eventData.user_id || ga4UserData.id;
+const email = eventData['x-ttq-ud-email'] || ga4UserData.email || ga4UserData.email_address;
+const phone_number = parsePhoneNumber(eventData['x-ttq-ud-phone-number'] || ga4UserData.phone || ga4UserData.phone_number);
 const ttp = eventData['x-ttq-ttp'] || getCookieValues('_ttp')[0];
 context.user = {};
 context.user.external_id = hashSHA256(external_id);
