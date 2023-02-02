@@ -164,7 +164,8 @@ const getTtclidFromUrl = (pageUrl) => {
   return undefined;
 };
 
-const getTtqContentsFromItems = (items) => {
+const getTtqContentsFromItems = (eventData) => {
+  const items = eventData.items || [];
   if (items.length === 0) return;
   return items.map((item) => {
     let item_id = item.item_id || item.id;
@@ -181,12 +182,13 @@ const getTtqContentsFromItems = (items) => {
     if (item.hasOwnProperty("item_category")) {
       content.content_category = item.item_category;
     }
-    content.content_type = item.content_type || eventData['x-ttq-content-type'] || data.contentType;
+    content.content_type = item.content_type || eventData['x-ttq-pt-content-type'] || data.contentType;
     return content;
   });
 };
 
-const getValueFromItems = (items) => {
+const getValueFromItems = (eventData) => {
+  const items = eventData.items || [];
   if (items.length === 0) return;
   const reducer = (previousValue, currentValue) => previousValue + currentValue;
   return Math.round(items.map((item) => {
@@ -205,7 +207,9 @@ const generateGA4EventId = (eventData) => {
 const mergeObj = (obj, obj2) => {
   for (let key in obj2) {
     if (obj2.hasOwnProperty(key)) {
-      obj[key] = obj2[key];
+      if (['null', 'undefined', 'function'].indexOf(getType(obj2[key])) === -1) {
+        obj[key] = obj2[key];
+      }
     }
   }
   return obj;
@@ -267,10 +271,9 @@ if (getType(ttp) === 'string') {
 
 // properties
 let properties = {};
-const contents = eventData.items || [];
-properties.contents = eventData['x-ttq-pt-contents'] || getTtqContentsFromItems(contents);
+properties.contents = eventData['x-ttq-pt-contents'] || getTtqContentsFromItems(eventData);
 properties.currency = eventData['x-ttq-pt-currency'] || eventData.currency;
-properties.value = eventData['x-ttq-pt-value'] || eventData.value || getValueFromItems(contents);
+properties.value = eventData['x-ttq-pt-value'] || eventData.value || getValueFromItems(eventData);
 properties.description = eventData['x-ttq-pt-description'];
 properties.query = eventData['x-ttq-pt-query'] || eventData.search_term;
 
