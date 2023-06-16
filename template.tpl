@@ -238,11 +238,8 @@ context.page.url = eventData['x-ttq-ct-page-url'] || eventData.page_location;
 context.page.referrer = eventData['x-ttq-ct-page-referer'] || eventData.page_referrer;
 
 // context > ad
-const ttclidCookie = getCookieValues('ttclid')[0];
 const ttclid = eventData['x-ttq-ttclid']|| getTtclidFromUrl(context.page.url);
 if (ttclid) {
-  context.ad = {};
-  context.ad.callback = ttclid;
   setCookie('ttclid', ttclid, {
       'max-age': 3600 * 24 * 7,
       domain: 'auto',
@@ -250,6 +247,12 @@ if (ttclid) {
       httpOnly: true,
       secure: true,
     });
+}
+
+const ttclidCookie = getCookieValues('ttclid')[0];
+if (ttclidCookie) {
+  context.ad = {};
+  context.ad.callback = ttclidCookie;
 }
 
 // context > user
