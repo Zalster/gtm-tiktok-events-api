@@ -1,6 +1,8 @@
 homepage: 'https://zalster.com'
 documentation: 'hhttps://github.com/Zalster/gtm-tiktok-events-api'
 versions:
+  - sha: f4b97f65e1dc8276710211af5fea56816a8d93c2
+    changeNotes: Updated logic for ttclid and cookie handling
   - sha: 45ccb01d666ebf1660cbd3a3b2c796d4d92e5320
     changeNotes: Updated merge function
   - sha: 609a345935ad2f70913665a935a8316710efd61a
